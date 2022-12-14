@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Lato:wght@300;400&family=Montserrat:wght@500;600&family=Poppins:wght@200;300;500&family=Righteous&family=Source+Sans+Pro:wght@600;700;900&display=swap');
+
+body {
+    overflow-x: hidden;
+    background: none;
+}
+
+table, td, th, tr {
+    color: white;
+    outline: none;
+}
+
+th {
+    padding: 15px;
+    background-color: #1F4287;
+    color: white;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+td {
+  overflow: hidden;
+  padding: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
+  text-align: center;
+}
+td, th {
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 300;
+}

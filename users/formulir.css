@@ -1,0 +1,54 @@
+body {
+    width: 100vw; height: 100vh;
+    position: fixed; top:0; left:0;
+    display: flex;
+    font-family: sans-serif;
+    background-color: #006635;
+}
+
+.background {
+    position: fixed; top:0; left:0;
+    width: 100vw; height: 100vh;
+    background-color: #006635;
+}
+
+.leftside {
+    width: 50vw; height: 100vh;
+    position: absolute;
+    top:0; left:0;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center;
+}
+
+.rightside {
+    width: 50vw; height: 100vh;
+    position: absolute;
+    top: 0; right:0;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center
+}
+
+.titless {
+    color:white;
+    font-size: 5vw;
+    margin: 10;
+    margin-top: -5vh;
+}
+
+.logo {
+    width: 30vw;
+}
+
+.titles {
+    color: white;
+}
+
+.form {
+    width: 120px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.form:focus {
+    outline: 10px;
+}

@@ -1,0 +1,292 @@
+/*!
+ * JSTable
+ */
+
+ * {
+    border: none;
+    color: white;
+}
+
+.dt-container {
+    position:relative;
+    display:block;
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    -ms-overflow-style:-ms-autohiding-scrollbar;
+    overflow-y:hidden;
+}
+
+.dt-container .dt-message {
+    text-align:center;
+}
+
+.dt-container .dt-loading {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    margin-left:-50%;
+    margin-top:-20px;
+    height:40px;
+    text-align:center;
+    background-color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right, rgba(255,255,255,0) 0, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);
+}
+
+.dt-top,.dt-bottom {
+    padding:8px 10px;
+    display:flex;
+    justify-content:space-between;
+    color: black;
+}
+
+.dt-top .dt-selector,.dt-bottom .dt-selector {
+    padding:6px;
+    color: white;
+    margin-left: -7px;
+    background-color: #1F4287;
+    cursor: pointer;
+}
+.dt-top:focus .dt-selector:focus,.dt-bottom:focus .dt-selector:focus {
+    outline: none;
+    border: none;
+}
+
+.dt-top .dt-info,.dt-bottom .dt-info {
+    margin:7px 0;
+}
+
+.dt-input {
+    padding:6px 12px;
+    color: white;
+    background-color: #1F4287;
+    transition:0.3s ease;
+}
+
+.dt-input:focus {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: white;
+}
+
+.dt-pagination ul {
+    margin:0;
+    padding-left:0;
+}
+
+.dt-pagination ul li {
+    list-style:none;
+    float:left;
+}
+
+.dt-pagination a,.dt-pagination span {
+    border:1px solid transparent;
+    float:left;
+    margin-left:2px;
+    padding:6px 12px;
+    position:relative;
+    text-decoration:none;
+    color:inherit;
+}
+
+.dt-pagination a:hover {
+    background-color:#1F4287;
+}
+
+.dt-pagination .active a,.dt-pagination .active a:focus,.dt-pagination .active a:hover {
+    background-color:#1F4287;
+    cursor:default;
+}
+
+.dt-pagination .dt-ellipsis span {
+    cursor:not-allowed;
+}
+
+.dt-pagination .disabled a,.dt-pagination .disabled a:focus,.dt-pagination .disabled a:hover {
+    cursor:not-allowed;
+    opacity:0.4;
+}
+
+.dt-pagination .pager a {
+    font-weight:bold;
+}
+
+.dt-table {
+    max-width:100%;
+    width:100%;
+    border-spacing:0;
+}
+
+.dt-table>tbody>tr>td,.dt-table>tbody>tr>th,.dt-table>tfoot>tr>td,.dt-table>tfoot>tr>th,.dt-table>thead>tr>td,.dt-table>thead>tr>th {
+    vertical-align:top;
+    padding:15px;
+    white-space:nowrap;
+    border: 3px solid #071E3D;
+}
+
+.dt-table>thead>tr>th,.dt-table>thead>tr>td {
+    vertical-align:bottom; 
+    text-align:left;
+    border-bottom:none;
+}
+
+.dt-table>tfoot>tr>th,.dt-table>tfoot>tr>td {
+    vertical-align:bottom;
+    text-align:left;
+    border-top:none;
+}
+
+.dt-table th {
+    vertical-align:bottom;
+    border: 1px solid #071E3D;
+    background-color: #1F4287;
+}
+
+.dt-table th.dt-sorter { 
+    position:relative;
+    cursor:pointer;
+    padding-right:20px;
+}
+
+.dt-table th.dt-sorter::before,.dt-table th.dt-sorter::after {
+    content:""; 
+    height:0;
+    width:0;
+    position:absolute;
+    right:7px;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    opacity:0.2;
+}
+
+.dt-table th.dt-sorter::before {
+    top:18px;
+}
+
+.dt-table th.dt-sorter::after {
+    bottom:22px;
+}
+
+.dt-table th.dt-sorter.asc::after,.dt-table th.dt-sorter.desc::before {
+    opacity:0;
+}
+
+.hidden {
+    display:none;
+    opacity:0;
+}
+
+tr:nth-child(even)   { background-color:#0c3060; }
+tr:nth-child(odd)    { background: none; }
+
+.add {
+    padding:10px 20px;
+    justify-content: right;
+    background-color: #1370ed;
+    transition: 0.2s ease;
+    color: white;
+    margin:2px;
+    border-radius: 5px;
+}
+
+.view {
+    background-color: #36AE7C;
+    color: #071E3D;
+    transition: 0.2s ease;
+}
+
+.edit {
+    background-color: #F9D923;
+    color: #071E3D;
+    transition: 0.2s ease;
+}
+
+.delete {
+    background-color: #EB5353;
+    color: #071E3D;
+    transition: 0.2s ease;
+}
+
+.add:hover {
+    background-color: #1370ed;
+    color: white;
+    font-size: 17px;
+    box-shadow: 0 0 10px #1370ed;
+}
+
+.view:hover {
+    background-color: #36AE7C;
+    color:#071E3D;
+    box-shadow: 0 0 10px #36AE7C;
+}
+
+.edit:hover {
+    background-color: #F9D923;
+    color:#071E3D;
+    box-shadow: 0 0 10px #F9D923;
+}
+
+.delete:hover {
+    background-color: #EB5353;
+    color:#071E3D;
+    box-shadow: 0 0 10px #EB5353;
+}
+
+table, td, th, tr {
+    color: white;
+    outline: none;
+}
+
+th {
+    padding: 15px;
+    background-color: #1F4287;
+    color: white;
+    
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+  overflow: hidden;
+  padding: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
+  text-align: center;
+}
+
+td, th {
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 300;
+}
+
+.bx {
+    font-size: 25px;
+    margin-top:17%;
+    color: #071E3D;
+    transition: 0.2s ease;
+}
+
+.bx:hover {
+    font-size: 30px;
+}
+
+.form-label {
+    color:black;
+}
+
+.modal-title {
+    color: black;
+}
